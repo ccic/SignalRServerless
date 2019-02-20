@@ -13,7 +13,7 @@ namespace Microsoft.Azure.SignalR.Samples.Serverless
                 DefaultTimeout = TimeSpan.FromSeconds(seconds),
                 InnerHandler = new HttpClientHandler()
             };
-            var client = new HttpClient(handler);
+            var client = new HttpClient(handler, true);
             client.Timeout = Timeout.InfiniteTimeSpan;
             return client;
         }
